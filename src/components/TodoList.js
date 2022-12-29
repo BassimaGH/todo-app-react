@@ -7,7 +7,7 @@ function TodoList() {
 
 	function addTodo (todo) {
 		if (!todo.text || /^\s*$/.test(todo.text)) {
-			return;
+			return alert("ADD PROPER TEXT");
 		}
 
 		const newTodos = [todo, ...todos];
@@ -17,7 +17,7 @@ function TodoList() {
 
 	function updateTodo(todoId, newValue) {
 		if (!newValue.text || /^\s*$/.test(newValue.text)) {
-			return;
+			return alert("ADD PROPER TEXT");
 		}
 
 		setTodos(previousTodo => previousTodo.map(item => (item.id === todoId ? newValue : item)))
@@ -43,7 +43,7 @@ function TodoList() {
 		<div>
 			<h1>Whats the plan for today</h1>
 			<TodoForm onSubmit={addTodo}/>
-			<Todo 
+			<Todo
 				todos={todos}
 				completeTodo={completeTodo}
 				removeTodo={removeTodo}
